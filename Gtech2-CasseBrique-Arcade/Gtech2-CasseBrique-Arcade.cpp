@@ -1,5 +1,6 @@
 
 #include <SFML/Graphics.hpp>
+#include "gameObject.h"
 
 int main(int argc, char** argv)
 {
@@ -14,12 +15,15 @@ int main(int argc, char** argv)
     oCircle.setFillColor(sf::Color::Green);
 
 
-    //Création d'un rectangle de taille 50, 50
+    /*//Création d'un rectangle de taille 50, 50
     sf::RectangleShape oRectangle(sf::Vector2f(50.f, 50.f));
     //A la position 100, 100
     oRectangle.setPosition(100.f, 100.f);
     //Et de couleur rouge
-    oRectangle.setFillColor(sf::Color::Red);
+    oRectangle.setFillColor(sf::Color::Red);*/
+
+    gameObject* rectangle = new gameObject(100,100,100,100);
+    //rectangle.setPosition(100.f, 100.f);
 
     //GameLoop
     while (oWindow.isOpen())
@@ -38,7 +42,7 @@ int main(int argc, char** argv)
         oWindow.clear();
 
         oWindow.draw(oCircle);
-        oWindow.draw(oRectangle);
+        //oWindow.draw(oRectangle);
 
         oWindow.display();
     }
