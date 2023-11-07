@@ -4,6 +4,7 @@
 
 int main(int argc, char** argv)
 {
+    
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(640, 480), "SFML");
 
@@ -23,8 +24,10 @@ int main(int argc, char** argv)
     oRectangle.setFillColor(sf::Color::Red);*/
 
     gameObject* rectangle = new gameObject(100,100,100,100);
-    //rectangle.setPosition(100.f, 100.f);
+    sf::RectangleShape brique = rectangle->getShape();
 
+    float fDeltaTime = 0;
+    sf::Clock oClock;
     //GameLoop
     while (oWindow.isOpen())
     {
@@ -40,12 +43,16 @@ int main(int argc, char** argv)
 
         //DRAW
         oWindow.clear();
-
-        oWindow.draw(oCircle);
-        //oWindow.draw(oRectangle);
+        //sf::RectangleShape brique1 = brique;
+        sf::RectangleShape brique = rectangle->getShape();
+        oWindow.draw(brique);
 
         oWindow.display();
+        
+        rectangle->move(fDeltaTime);
+        fDeltaTime = oClock.restart().asSeconds();
     }
+    
 
     return 0;
 }

@@ -3,15 +3,20 @@
 class gameObject
 {
 private:
-	int i_positionX;
-	int i_positionY;
+	float i_positionX;
+	float i_positionY;
 	int i_width;
 	int i_height;
+	std::vector<float> f_direction;
+	
+	//char* c_color;
 	sf::RectangleShape oRectangle;
 
 public:
-	gameObject(int x, int y, int width, int height);
-
+	gameObject(float x, float y, int width, int height/*, char* color*/);
+	sf::RectangleShape getShape();
+	void rotation();
+	void move(float fDeltaTime);
 
 };
 
