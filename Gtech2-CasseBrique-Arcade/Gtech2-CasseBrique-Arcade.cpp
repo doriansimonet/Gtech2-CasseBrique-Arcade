@@ -23,9 +23,11 @@ int main(int argc, char** argv)
     //Et de couleur rouge
     oRectangle.setFillColor(sf::Color::Red);*/
 
-    gameObject* rectangle = new gameObject(100,100,100,100);
-    sf::RectangleShape brique = rectangle->getShape();
-
+    gameObject* rectangle = new gameObject(0,0,100,100,1,0);
+    gameObject* rectangle2 = new gameObject(540, 0, 100, 100, -1,0);
+    //sf::Shape brique = rectangle->getShape();
+    gameObject* circle = new gameObject(500, 100, 50,0,0);
+    //sf::CircleShape ball = circle->getShape();
     float fDeltaTime = 0;
     sf::Clock oClock;
     //GameLoop
@@ -41,15 +43,23 @@ int main(int argc, char** argv)
 
         //UPDATE
 
+        rectangle->move(fDeltaTime);
+        rectangle2->move(fDeltaTime);
+        rectangle->collided(*rectangle2);
+
         //DRAW
         oWindow.clear();
         //sf::RectangleShape brique1 = brique;
-        sf::RectangleShape brique = rectangle->getShape();
-        oWindow.draw(brique);
+        //sf::RectangleShape brique = rectangle->getRectShape();
+        //oWindow.draw(brique);
+        //oWindow.draw(ball);
+
+        rectangle->drawShape(oWindow);
+        rectangle2->drawShape(oWindow);
+        circle->drawShape(oWindow);
 
         oWindow.display();
-        
-        rectangle->move(fDeltaTime);
+
         fDeltaTime = oClock.restart().asSeconds();
     }
     
