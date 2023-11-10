@@ -1,8 +1,12 @@
 
 #include <SFML/Graphics.hpp>
+#include <math.h>
+#include "colors.h"
+#include "gameObject.h"
 
 int main(int argc, char** argv)
 {
+
     Color green(0xadff2f);
     Color greenclaire(0x76ff7a);
     Color blue(0x4169E1);
