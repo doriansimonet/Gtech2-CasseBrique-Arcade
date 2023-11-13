@@ -1,8 +1,8 @@
 #include <iostream>
 #include "gameObject.h"
 gameObject::gameObject(float x, float y, int width, int height, int directionX, int directionY/*,char* color*/) {
-	i_positionX = x;
-	i_positionY = y;
+	f_positionX = x;
+	f_positionY = y;
 	i_width = width;
 	i_height = height;
 
@@ -11,7 +11,7 @@ gameObject::gameObject(float x, float y, int width, int height, int directionX, 
 	f_direction[0] = directionX;
 	f_direction[1] = directionY;
 	shape = new sf::RectangleShape(sf::Vector2f(i_width, i_height));
-	shape->setPosition(i_positionX, i_positionY);
+	shape->setPosition(f_positionX, f_positionY);
 	shape->setFillColor(sf::Color::Red);
 	/*if (radius == 0) {
 		oRectangle = sf::RectangleShape(sf::Vector2f(i_width, i_height));
@@ -25,8 +25,8 @@ gameObject::gameObject(float x, float y, int width, int height, int directionX, 
 	}*/
 }
 gameObject::gameObject(float x, float y, int radius, int directionX, int directionY/*,char* color*/) {
-	i_positionX = x;
-	i_positionY = y;
+	f_positionX = x;
+	f_positionY = y;
 	i_radius = radius;
 
 	//c_color = sf::Color::color;
@@ -34,22 +34,34 @@ gameObject::gameObject(float x, float y, int radius, int directionX, int directi
 	f_direction[0] = directionX;
 	f_direction[1] = directionY;
 	shape = new sf::CircleShape(i_radius);
-	shape->setPosition(i_positionX, i_positionY);
+	shape->setPosition(f_positionX, f_positionY);
 	shape->setFillColor(sf::Color::Red);
 }
 
-void gameObject::rotation() {
-	
-}
+/*void gameObject::rotation(sf::RenderWindow& window) {
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
-void gameObject::move(float fDeltaTime) {
+	// Calcul de l'angle entre le canon et la position de la souris
+	shape->setOrigin(10.f, 30.f);
+	float angle = atan2(mousePosition.y - shape->getPosition().y, mousePosition.x - shape->getPosition().x);
+	angle = angle * 180 / 3.14159 + 90; // Conversion en degrés
+	float pastAngle = angle;
+	angle = fmin(75, fmax(-75, angle));
+
+	if (pastAngle == angle)
+	{
+		shape->setRotation(angle); // Rotation du canon
+	}
+}*/
+
+/*void gameObject::move(float fDeltaTime) {
 	i_positionX += f_direction[0]*100.f*fDeltaTime;
 	i_positionY += f_direction[1]*100.f*fDeltaTime;
 	shape->setPosition(i_positionX, i_positionY);
-}
+}*/
 
 void gameObject::collided(gameObject& obstacle) {
-	int euh = obstacle.i_positionX;
+	int euh = obstacle.f_positionX;
 	std::cout << euh;
 	/*if (obstacle.i_positionX == i_positionX) {
 		std::cout << "ca marche?!";
@@ -58,4 +70,22 @@ void gameObject::collided(gameObject& obstacle) {
 
 void gameObject::drawShape(sf::RenderWindow& window) {
 	window.draw(*shape);
+}
+
+sf::Shape* gameObject::getShape() {
+	return shape;
+}
+
+void gameObject::setDirection(float fX, float fY) {
+	f_direction[0] = fX;
+	f_direction[1] = fY;
+}
+std::vector<float>  gameObject::getPos() {
+	std::vector<float> pos;
+	pos[0] = f_positionX;
+	pos[1] = f_positionY;
+	return pos;
+}
+gameObject::~gameObject() {
+
 }
