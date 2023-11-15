@@ -8,6 +8,8 @@ private:
 public:
 	Ball(float x, float y, int radius, int directionX, int directionY);
 	void move(float fDeltaTime);
-	void Collision(Brick brique, sf::FloatRect ballBounds);
+	void collision(Brick* brique, sf::FloatRect ballBounds);
+	void bounce(Brick* brique);
+	void changePos(int x, int y);
 };
 

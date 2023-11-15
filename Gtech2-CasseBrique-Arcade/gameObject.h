@@ -21,9 +21,11 @@ public:
 	sf::Shape* getShape();
 	//void rotation(sf::RenderWindow& window);
 	//void move(float fDeltaTime);
-	void collided(gameObject& obstacle);
 	void drawShape(sf::RenderWindow& window);
 	void setDirection(float fX, float fY);
+	std::vector<float>  getDirection();
+	int getWidth();
+	int getHeight();
 	std::vector<float> getPos();
 	~gameObject();
 };

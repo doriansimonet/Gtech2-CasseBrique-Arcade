@@ -22,9 +22,8 @@ int main(int argc, char** argv)
 
     //Création d'un cercle de radius 10
     //sf::CircleShape oCircleBall(10.f);
-    Ball* oBall = new Ball(0, 100, 10, 1, 0);
-    Ball* oBallUp = new Ball(0, 100, 10, 0, 1);
-    Ball* oBallVer = new Ball(0, 300, 10, 1, 0);
+    Ball* oBall = new Ball(200, 300, 5, 2, 2);
+    //Ball* oBall = new Ball(100, 100, 10, 1, 0);
     //A la position 0, 0
     //oCircleBall.setPosition(0.f, 100.f);
     //Et de couleur Magenta
@@ -192,6 +191,8 @@ int main(int argc, char** argv)
 
         oCanon->rotation(oWindow);
 
+        oCanon->tire(oWindow,oBall);
+
 
         // Obtenir la position de la souris par rapport à la fenêtre
         /*
@@ -215,84 +216,65 @@ int main(int argc, char** argv)
         sf::Shape* ballShape = oBall->getShape();
         sf::FloatRect ballBounds = ballShape->getGlobalBounds();
         //sf::FloatRect ballBounds = oCircleBall.getGlobalBounds();
-        sf::Shape* rect = oBrique1->getShape();
-        sf::FloatRect brique1Bounds = rect->getGlobalBounds();
-
-        if (ballBounds.intersects(brique1Bounds)) {
-            // Collision détectée
-            oBall->setDirection(-1,0);
-            oBrique1->takeDamage();
-        }
         
+        oBall->collision(oBrique10, ballBounds);
+        oBall->collision(oBrique9, ballBounds);
+        oBall->collision(oBrique8, ballBounds);
+        oBall->collision(oBrique7, ballBounds);
+        oBall->collision(oBrique6, ballBounds);
+        oBall->collision(oBrique5, ballBounds);
+        oBall->collision(oBrique4, ballBounds);
+        oBall->collision(oBrique3, ballBounds);
+        oBall->collision(oBrique2, ballBounds);
+        oBall->collision(oBrique1, ballBounds);
+        oBall->collision(oBrique20, ballBounds);
+        oBall->collision(oBrique19, ballBounds);
+        oBall->collision(oBrique18, ballBounds);
+        oBall->collision(oBrique17, ballBounds);
+        oBall->collision(oBrique16, ballBounds);
+        oBall->collision(oBrique15, ballBounds);
+        oBall->collision(oBrique14, ballBounds);
+        oBall->collision(oBrique13, ballBounds);
+        oBall->collision(oBrique12, ballBounds);
+        oBall->collision(oBrique11, ballBounds);
+        oBall->collision(oBrique30, ballBounds);
+        oBall->collision(oBrique29, ballBounds);
+        oBall->collision(oBrique28, ballBounds);
+        oBall->collision(oBrique27, ballBounds);
+        oBall->collision(oBrique26, ballBounds);
+        oBall->collision(oBrique25, ballBounds);
+        oBall->collision(oBrique24, ballBounds);
+        oBall->collision(oBrique23, ballBounds);
+        oBall->collision(oBrique22, ballBounds);
+        oBall->collision(oBrique21, ballBounds);
 
-        oBall->Collision(*oBrique10, ballBounds);
 
-        /*int lifeBrique10 = oBrique10->getLife();
-        if (lifeBrique10 > 0) {
-            sf::Shape* rect10 = oBrique10->getShape();
-            sf::FloatRect brique10Bounds = rect10->getGlobalBounds();
 
-            if (ballBounds.intersects(brique10Bounds)) {
-                // Collision détectée
-                oBall->setDirection(-1, 0);
-                oBrique10->takeDamage();
-            }
-        }*/
 
 
         float testPosX = ballShape->getPosition().x;
         float testPosY = ballShape->getPosition().y;
-        if (testPosX <= 0) {
-            oBall->setDirection(1,0);
+        std::vector<float> dir = oBall->getDirection();
+        if (testPosX < 0) {
+            oBall->setDirection(dir[0]*-1, dir[1]);
         }
-        else if(testPosX>=640){
-            oBall->setDirection(-1, 0);
+        else if(testPosX+20>640){
+            oBall->setDirection(dir[0] * -1, dir[1]);
         }
-        else if (testPosY <= 0) {
-            oBall->setDirection(0, 1);
+        else if (testPosY < 0) {
+            oBall->setDirection(dir[0], dir[1] * -1);
         }
-        else if (testPosY >= 480) {
-            oBall->setDirection(0, -1);
-        }
-
-
-        sf::Shape* testUp = oBallUp->getShape();
-        float testPosXup = testUp->getPosition().x;
-        float testPosYup = testUp->getPosition().y;
-        if (testPosXup < 0) {
-            oBallUp->setDirection(1, 0);
-        }
-        else if (testPosXup+20 >= 640) {
-            oBallUp->setDirection(-1, 0);
-        }
-        else if (testPosYup <= 0) {
-            oBallUp->setDirection(0, 1);
-        }
-        else if (testPosYup+20 >= 480) {
-            oBallUp->setDirection(0, -1);
+        else if (testPosY+20 > 480) {
+            oBall->setDirection(0, 0);
+            oBall->changePos(305,415);
         }
 
-        sf::Shape* testVer = oBallVer->getShape();
-        float testPosXVer = testVer->getPosition().x;
-        float testPosYVer = testVer->getPosition().y;
-        if (testPosXVer < 0) {
-            oBallVer->setDirection(1, 0);
-        }
-        else if (testPosXVer + 20 >= 640) {
-            oBallVer->setDirection(-1, 0);
-        }
-        else if (testPosYVer <= 0) {
-            oBallVer->setDirection(0, 1);
-        }
-        else if (testPosYVer + 20 >= 480) {
-            oBallVer->setDirection(0, -1);
-        }
+
 
         //Mouvement de la balle
         sf::Vector2f velocity(0.005, 0);
         oBall->move(fDeltaTime);
-        oBallUp->move(fDeltaTime);
-        oBallVer->move(fDeltaTime);
+
         // Mettre à jour la position de la balle en fonction de la vitesse
         //oCircleBall.move(velocity);
 
@@ -313,9 +295,9 @@ int main(int argc, char** argv)
         //oWindow.draw(ball);
 
         //oWindow.draw(oCircleBall);
+        oCanon->drawShape(oWindow);
         oBall->drawShape(oWindow);
-        oBallUp->drawShape(oWindow);
-        oBallVer->drawShape(oWindow);
+
         oBrique1->drawShape(oWindow);
         //oWindow.draw(oRectangleBrique1);
         oBrique2->drawShape(oWindow);
@@ -349,7 +331,7 @@ int main(int argc, char** argv)
         oBrique30->drawShape(oWindow);
 
         //oWindow.draw(oRectangleCanon);
-        oCanon->drawShape(oWindow);
+        
 
         oWindow.display();
 

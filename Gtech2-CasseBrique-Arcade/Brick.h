@@ -4,7 +4,7 @@ class Brick : public gameObject
 {
 private:
 	int i_life;
-	gameObject* brick;
+	//gameObject* brick;
 
 public:
 	Brick(float x, float y, int width, int height, int directionX, int directionY);

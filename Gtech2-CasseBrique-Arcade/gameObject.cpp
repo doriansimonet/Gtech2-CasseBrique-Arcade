@@ -60,14 +60,6 @@ gameObject::gameObject(float x, float y, int radius, int directionX, int directi
 	shape->setPosition(i_positionX, i_positionY);
 }*/
 
-void gameObject::collided(gameObject& obstacle) {
-	int euh = obstacle.f_positionX;
-	std::cout << euh;
-	/*if (obstacle.i_positionX == i_positionX) {
-		std::cout << "ca marche?!";
-	}*/
-}
-
 void gameObject::drawShape(sf::RenderWindow& window) {
 	window.draw(*shape);
 }
@@ -77,15 +69,35 @@ sf::Shape* gameObject::getShape() {
 }
 
 void gameObject::setDirection(float fX, float fY) {
-	f_direction[0] = fX;
-	f_direction[1] = fY;
+	if (fX == 0 && fY == 0) {
+		f_direction[0] = fX;
+		f_direction[1] = fY;
+	}
+	else {
+		float length = sqrt(fX * fX + fY * fY);
+		f_direction[0] = fX / length;
+		f_direction[1] = fY / length;
+	}
+	
+}
+
+std::vector<float>  gameObject::getDirection() {
+	return f_direction;
 }
 std::vector<float>  gameObject::getPos() {
 	std::vector<float> pos;
+	pos.resize(2);
 	pos[0] = f_positionX;
 	pos[1] = f_positionY;
 	return pos;
 }
+int gameObject::getWidth() {
+	return i_width;
+}
+int gameObject::getHeight() {
+	return i_height;
+}
+
 gameObject::~gameObject() {
 
 }
