@@ -46,10 +46,6 @@ void Ball::bounce(Brick* brique) {
     if (right == up || right == down || up == left || down == left) {
         this->setDirection(f_direction[0] * (-1), f_direction[1] * (-1));
     }
-    
-
-
-
 }
 
 void Ball::changePos(int x, int y) {

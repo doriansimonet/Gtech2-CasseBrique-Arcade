@@ -21,25 +21,10 @@ int main(int argc, char** argv)
     sf::RenderWindow oWindow(sf::VideoMode(640, 480), "SFML");
 
     //Création d'un cercle de radius 10
-    //sf::CircleShape oCircleBall(10.f);
     Ball* oBall = new Ball(200, 300, 5, 2, 2);
-    //Ball* oBall = new Ball(100, 100, 10, 1, 0);
-    //A la position 0, 0
-    //oCircleBall.setPosition(0.f, 100.f);
-    //Et de couleur Magenta
-    //oCircleBall.setFillColor(sf::Color::Magenta);
-
 
     //Création d'un rectangle de taille 30, 10, pos 500,100
     Brick* oBrique1 = new Brick(500, 100, 30, 10, 0, 0);
-
-    /*sf::RectangleShape oRectangleBrique1(sf::Vector2f(30.f, 10.f));
-    //A la position 500, 100
-    oRectangleBrique1.setPosition(500.f, 100.f);
-    green.mixin(greenclaire, &degrader, 1.0f / 9.0f * 0.0f);
-    //Couleur 
-    oRectangleBrique1.setFillColor(sf::Color(degrader.r(), degrader.g(), degrader.b()));
-    */
 
     //Création d'un rectangle de taille 30, 10, pos 460,100
     Brick* oBrique2 = new Brick(460, 100, 30, 10, 0, 0);
@@ -71,18 +56,8 @@ int main(int argc, char** argv)
 
 // Changement de degrader et de ligne 
 
-
-
     //Création d'un rectangle de taille 30, 10, pos 500,80
     Brick* oBrique11 = new Brick(500, 80, 30, 10, 0, 0);
-
-    /*sf::RectangleShape oRectangleBrique1(sf::Vector2f(30.f, 10.f));
-    //A la position 500, 100
-    oRectangleBrique1.setPosition(500.f, 100.f);
-    blue.mixin(bleuclaire, &degrader, 1.0f / 9.0f * 0.0f);
-    //Couleur
-    oRectangleBrique1.setFillColor(sf::Color(degrader.r(), degrader.g(), degrader.b()));
-    */
 
     //Création d'un rectangle de taille 30, 10, pos 460,80
     Brick* oBrique12 = new Brick(460, 80, 30, 10, 0, 0);
@@ -111,19 +86,11 @@ int main(int argc, char** argv)
     //Création d'un rectangle de taille 30, 10, pos 140,80
     Brick* oBrique20 = new Brick(140, 80, 30, 10, 0, 0);
 
-    //Changement de degardé et de ligne
 
+    // Changement de degrader et de ligne 
 
     //Création d'un rectangle de taille 30, 10, pos 500,60
     Brick* oBrique21 = new Brick(500, 60, 30, 10, 0, 0);
-
-    /*sf::RectangleShape oRectangleBrique1(sf::Vector2f(30.f, 10.f));
-    //A la position 500, 100
-    oRectangleBrique1.setPosition(500.f, 100.f);
-    red.mixin(orange, &degrader, 1.0f / 9.0f * 0.0f);
-    //Couleur
-    oRectangleBrique1.setFillColor(sf::Color(degrader.r(), degrader.g(), degrader.b()));
-    */
 
     //Création d'un rectangle de taille 30, 10, pos 460,60
     Brick* oBrique22 = new Brick(460, 60, 30, 10, 0, 0);
@@ -146,29 +113,87 @@ int main(int argc, char** argv)
     //Création d'un rectangle de taille 30, 10, pos 220,60
     Brick* oBrique28 = new Brick(220, 60, 30, 10, 0, 0);
 
-    //Création d'un rectangle de taille 30, 10, pos 180,60
+    //Création d'un rectangle de taille 30, 10, pos 180,86
     Brick* oBrique29 = new Brick(180, 60, 30, 10, 0, 0);
 
-    //Création d'un rectangle de taille 30, 10, pos 140,60
+    //Création d'un rectangle de taille 30, 10, pos 140,86
     Brick* oBrique30 = new Brick(140, 60, 30, 10, 0, 0);
+
+
+    //Changement de degardé et de ligne
+
+    //Création d'un rectangle de taille 30, 10, pos 500,120
+    Brick* oBrique31 = new Brick(500, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 460,120
+    Brick* oBrique32 = new Brick(460, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 420,120
+    Brick* oBrique33 = new Brick(420, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 380,120
+    Brick* oBrique34 = new Brick(380, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 340,120
+    Brick* oBrique35 = new Brick(340, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 300,120
+    Brick* oBrique36 = new Brick(300, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 260,120
+    Brick* oBrique37 = new Brick(260, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 220,120
+    Brick* oBrique38 = new Brick(220, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 180,120
+    Brick* oBrique39 = new Brick(180, 120, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 140,120
+    Brick* oBrique40 = new Brick(140, 120, 30, 10, 0, 0);
+
+
+    //Changement de degardé et de ligne
+
+    //Création d'un rectangle de taille 30, 10, pos 500,140
+    Brick* oBrique41 = new Brick(500, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 460,140
+    Brick* oBrique42 = new Brick(460, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 420,140
+    Brick* oBrique43 = new Brick(420, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 380,140
+    Brick* oBrique44 = new Brick(380, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 340,140
+    Brick* oBrique45 = new Brick(340, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 300,140
+    Brick* oBrique46 = new Brick(300, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 260,140
+    Brick* oBrique47 = new Brick(260, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 220,140
+    Brick* oBrique48 = new Brick(220, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 180,140
+    Brick* oBrique49 = new Brick(180, 140, 30, 10, 0, 0);
+
+    //Création d'un rectangle de taille 30, 10, pos 140,140
+    Brick* oBrique50 = new Brick(140, 140, 30, 10, 0, 0);
+
 
     //Canon
 
     //Création d'un rectangle de taille 20, 60
     Cannon* oCanon = new Cannon(310, 420, 20, 60, 0, 0);
-    /*
-    sf::RectangleShape oRectangleCanon(sf::Vector2f(20.f, 60.f));
-    //A la position 310, 420
-    oRectangleCanon.setPosition(310.f, 420.f);
-    //Couleur
-    oRectangleCanon.setFillColor(sf::Color::Blue);
-    */   
-
+ 
     gameObject* rectangle = new gameObject(0,0,100,100,1,0);
     gameObject* rectangle2 = new gameObject(540, 0, 100, 100, -1,0);
-    //sf::Shape brique = rectangle->getShape();
-    gameObject* circle = new gameObject(500, 100, 50,0,0);
-    //sf::CircleShape ball = circle->getShape();
+    gameObject* circle = new gameObject(500, 100, 50,0,0);;
     float fDeltaTime = 0;
     sf::Clock oClock;
 
@@ -185,37 +210,14 @@ int main(int argc, char** argv)
 
         //UPDATE
         
-
-        //Rotation du cannon
+        //Rotation/Tire du cannon
        
-
         oCanon->rotation(oWindow);
-
         oCanon->tire(oWindow,oBall);
-
-
-        // Obtenir la position de la souris par rapport à la fenêtre
-        /*
-        sf::Vector2i mousePosition = sf::Mouse::getPosition(oWindow);
-       
-        // Calcul de l'angle entre le canon et la position de la souris
-        oRectangleCanon.setOrigin(10.f, 30.f);
-        float angle = atan2(mousePosition.y - oRectangleCanon.getPosition().y, mousePosition.x - oRectangleCanon.getPosition().x);
-        angle = angle * 180 / 3.14159 + 90; // Conversion en degrés
-        float pastAngle = angle;
-        angle = fmin(75, fmax(-75, angle));
-
-        if (pastAngle == angle)
-        {
-            oRectangleCanon.setRotation(angle); // Rotation du canon
-        }
-        */
-
 
         //Collision avec la balle
         sf::Shape* ballShape = oBall->getShape();
         sf::FloatRect ballBounds = ballShape->getGlobalBounds();
-        //sf::FloatRect ballBounds = oCircleBall.getGlobalBounds();
         
         oBall->collision(oBrique10, ballBounds);
         oBall->collision(oBrique9, ballBounds);
@@ -247,10 +249,26 @@ int main(int argc, char** argv)
         oBall->collision(oBrique23, ballBounds);
         oBall->collision(oBrique22, ballBounds);
         oBall->collision(oBrique21, ballBounds);
-
-
-
-
+        oBall->collision(oBrique31, ballBounds);
+        oBall->collision(oBrique32, ballBounds);
+        oBall->collision(oBrique33, ballBounds);
+        oBall->collision(oBrique34, ballBounds);
+        oBall->collision(oBrique35, ballBounds);
+        oBall->collision(oBrique36, ballBounds);
+        oBall->collision(oBrique37, ballBounds);
+        oBall->collision(oBrique38, ballBounds);
+        oBall->collision(oBrique39, ballBounds);
+        oBall->collision(oBrique40, ballBounds);
+        oBall->collision(oBrique41, ballBounds);
+        oBall->collision(oBrique42, ballBounds);
+        oBall->collision(oBrique43, ballBounds);
+        oBall->collision(oBrique44, ballBounds);
+        oBall->collision(oBrique45, ballBounds);
+        oBall->collision(oBrique46, ballBounds);
+        oBall->collision(oBrique47, ballBounds);
+        oBall->collision(oBrique48, ballBounds);
+        oBall->collision(oBrique49, ballBounds);
+        oBall->collision(oBrique50, ballBounds);
 
         float testPosX = ballShape->getPosition().x;
         float testPosY = ballShape->getPosition().y;
@@ -269,37 +287,17 @@ int main(int argc, char** argv)
             oBall->changePos(305,415);
         }
 
-
-
         //Mouvement de la balle
         sf::Vector2f velocity(0.005, 0);
         oBall->move(fDeltaTime);
 
-        // Mettre à jour la position de la balle en fonction de la vitesse
-        //oCircleBall.move(velocity);
-
-        /*if (ballBounds.left < 0 || ballBounds.left + ballBounds.width > oWindow.getSize().x) {
-            velocity.x = -velocity.x; // Inverser la vitesse en cas de collision horizontale
-        }
-        if (ballBounds.top < 0 || ballBounds.top + ballBounds.height > oWindow.getSize().y) {
-            velocity.y = -velocity.y; // Inverser la vitesse en cas de collision verticale
-        }*/
-
-
-
         //DRAW
         oWindow.clear();
-        //sf::RectangleShape brique1 = brique;
-        //sf::RectangleShape brique = rectangle->getRectShape();
-        //oWindow.draw(brique);
-        //oWindow.draw(ball);
 
-        //oWindow.draw(oCircleBall);
         oCanon->drawShape(oWindow);
         oBall->drawShape(oWindow);
 
         oBrique1->drawShape(oWindow);
-        //oWindow.draw(oRectangleBrique1);
         oBrique2->drawShape(oWindow);
         oBrique3->drawShape(oWindow);
         oBrique4->drawShape(oWindow);
@@ -329,9 +327,26 @@ int main(int argc, char** argv)
         oBrique28->drawShape(oWindow);
         oBrique29->drawShape(oWindow);
         oBrique30->drawShape(oWindow);
-
-        //oWindow.draw(oRectangleCanon);
-        
+        oBrique31->drawShape(oWindow);
+        oBrique32->drawShape(oWindow);
+        oBrique33->drawShape(oWindow);
+        oBrique34->drawShape(oWindow);
+        oBrique35->drawShape(oWindow);
+        oBrique36->drawShape(oWindow);
+        oBrique37->drawShape(oWindow);
+        oBrique38->drawShape(oWindow);
+        oBrique39->drawShape(oWindow);
+        oBrique40->drawShape(oWindow);
+        oBrique41->drawShape(oWindow);
+        oBrique42->drawShape(oWindow);
+        oBrique43->drawShape(oWindow);
+        oBrique44->drawShape(oWindow);
+        oBrique45->drawShape(oWindow);
+        oBrique46->drawShape(oWindow);
+        oBrique47->drawShape(oWindow);
+        oBrique48->drawShape(oWindow);
+        oBrique49->drawShape(oWindow);
+        oBrique50->drawShape(oWindow);
 
         oWindow.display();
 
