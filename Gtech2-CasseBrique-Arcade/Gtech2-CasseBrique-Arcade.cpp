@@ -1,7 +1,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <math.h>
-#include "colors.h"
 #include "gameObject.h"
 #include "Canon.h"
 #include "Brick.h"
@@ -10,13 +9,6 @@
 int main(int argc, char** argv)
 {
     srand(time(NULL));
-    Color green(0xadff2f);
-    Color greenclaire(0x76ff7a);
-    Color blue(0x4169E1);
-    Color blueclaire(0xF0F8FF);
-    Color red(0x790909);
-    Color orange(0xff5900);
-    Color degrader;
     //Création d'une fenêtre
     sf::RenderWindow oWindow(sf::VideoMode(640, 480), "SFML");
 
