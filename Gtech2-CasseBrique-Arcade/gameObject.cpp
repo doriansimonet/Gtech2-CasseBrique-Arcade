@@ -67,7 +67,3 @@ int gameObject::getWidth() {
 int gameObject::getHeight() {
 	return i_height;
 }
-
-gameObject::~gameObject() {
-
-}

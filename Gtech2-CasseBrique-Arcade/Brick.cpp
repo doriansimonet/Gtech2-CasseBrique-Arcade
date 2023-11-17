@@ -42,5 +42,3 @@ void Brick::takeDamage() {
 int Brick::getLife() {
 	return i_life;
 }
-
-Brick::~Brick() {}

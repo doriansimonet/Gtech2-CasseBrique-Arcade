@@ -1,27 +1,34 @@
 #include "Ball.h"
 #include <iostream>
-Ball::Ball(float x, float y, int radius, int directionX, int directionY) : gameObject(x,y,radius,directionX,directionY),i_speed(100){}
+Ball::Ball(float x, float y, int radius, int directionX, int directionY) : gameObject(x,y,radius,directionX,directionY),f_speed(400.f){}
 
 void Ball::move(float fDeltaTime) {
-	f_positionX += f_direction[0] * 400.f * fDeltaTime;
-	f_positionY += f_direction[1] * 400.f * fDeltaTime;
+	f_positionX += f_direction[0] * f_speed * fDeltaTime;
+	f_positionY += f_direction[1] * f_speed * fDeltaTime;
 	shape->setPosition(f_positionX, f_positionY);
 }
 
-void Ball::collision(Brick* brique, sf::FloatRect ballBounds) {
+std::vector<Brick*> Ball::collision(Brick* brique, sf::FloatRect ballBounds, std::vector<Brick*> colBricks) {
     int lifeBrique = brique->getLife();
     sf::Shape* rect = brique->getShape();
     sf::FloatRect briqueBounds = rect->getGlobalBounds();
     if (lifeBrique > 0) {
-        
+        for (int i = 0; i < colBricks.size(); i += 1) {
+            if (brique == colBricks[i]) {
+                return colBricks;
+            }
+        }
 
         if (ballBounds.intersects(briqueBounds)) {
-            std::cout << lifeBrique;
+            //std::cout << lifeBrique;
             // Collision détectée
+            colBricks.push_back(brique);
             this->bounce(brique);
             brique->takeDamage();
+            return colBricks;
         }
     }
+    return colBricks;
 }
 
 void Ball::bounce(Brick* brique) {

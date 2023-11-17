@@ -21,6 +21,5 @@ public:
 	int getWidth();
 	int getHeight();
 	std::vector<float> getPos();
-	~gameObject();
 };
 

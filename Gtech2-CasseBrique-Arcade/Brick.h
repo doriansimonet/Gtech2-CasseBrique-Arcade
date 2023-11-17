@@ -9,6 +9,5 @@ public:
 	Brick(float x, float y, int width, int height, int directionX, int directionY);
 	void takeDamage();
 	int getLife();
-	~Brick();
 };
 
