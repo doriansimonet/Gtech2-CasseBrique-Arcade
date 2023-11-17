@@ -130,10 +130,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Brick.cpp" />
+    <ClCompile Include="Canon.cpp" />
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="gameObject.cpp" />
     <ClCompile Include="Gtech2-CasseBrique-Arcade.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Brick.h" />
+    <ClInclude Include="Canon.h" />
+    <ClInclude Include="colors.h" />
     <ClInclude Include="gameObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
